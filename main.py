@@ -283,6 +283,8 @@ def cmd_gui(args: argparse.Namespace) -> None:
         args: Parsed command-line arguments containing optional
               config path, weights path, and server settings.
     """
+    import gradio as gr
+
     from src.gui.app import create_app
 
     config = None
@@ -297,6 +299,7 @@ def cmd_gui(args: argparse.Namespace) -> None:
         server_name=args.host or "127.0.0.1",
         server_port=args.port or 7860,
         share=args.share,
+        theme=gr.themes.Soft(),
     )
 
 

@@ -208,3 +208,4 @@ __marimo__/
 
 FOOD-INGREDIENTS-dataset-4/*
 .vscode/
+*.pt

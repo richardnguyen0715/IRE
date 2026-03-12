@@ -273,7 +273,6 @@ def create_app(
 
     with gr.Blocks(
         title="IRE - Food Ingredient Detection",
-        theme=gr.themes.Soft(),
     ) as app:
         gr.Markdown(
             "# IRE - Food Ingredient Detection\n"

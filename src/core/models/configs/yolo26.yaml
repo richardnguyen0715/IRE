@@ -1,0 +1,49 @@
+# ============================================================
+# YOLO26 Configuration for Food Ingredient Detection
+# ============================================================
+# Model variant sizes: n (nano), s (small), m (medium),
+#                      l (large), x (extra-large)
+# Smaller variants are faster; larger variants are more accurate.
+# ============================================================
+
+model:
+  architecture: "yolo26"
+  variant: "n"
+
+# -- Training hyperparameters --
+training:
+  epochs: 100
+  batch_size: 16
+  image_size: 640
+  optimizer: "auto"
+  lr0: 0.01
+  lrf: 0.01
+  momentum: 0.937
+  weight_decay: 0.0005
+  warmup_epochs: 3.0
+  warmup_momentum: 0.8
+  warmup_bias_lr: 0.1
+  patience: 50
+  save_period: 10
+  workers: 8
+  project: "checkpoints"
+  name: "yolo26-n"
+  pretrained: true
+  exist_ok: true
+  verbose: true
+
+# -- Inference parameters --
+inference:
+  confidence: 0.25
+  iou_threshold: 0.45
+  image_size: 640
+
+# -- Dataset --
+dataset:
+  path: "FOOD-INGREDIENTS-dataset-4"
+
+# -- Data augmentation --
+# Use 'preset' for quick setup: none, light, medium, heavy
+# Or override individual parameters below the preset.
+augmentation:
+  preset: "medium"

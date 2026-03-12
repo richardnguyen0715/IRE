@@ -69,7 +69,7 @@ class ResourceMonitor:
                 {
                     "name": torch.cuda.get_device_name(i),
                     "memory_total_gb": round(
-                        torch.cuda.get_device_properties(i).total_mem
+                        torch.cuda.get_device_properties(i).total_memory
                         / (1024**3),
                         2,
                     ),
@@ -101,7 +101,7 @@ class ResourceMonitor:
             for i in range(torch.cuda.device_count()):
                 allocated = torch.cuda.memory_allocated(i)
                 reserved = torch.cuda.memory_reserved(i)
-                total = torch.cuda.get_device_properties(i).total_mem
+                total = torch.cuda.get_device_properties(i).total_memory
                 gpu_usage.append(
                     {
                         "device": i,
